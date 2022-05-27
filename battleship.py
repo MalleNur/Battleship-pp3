@@ -2,7 +2,7 @@
 # Explanation
 # Y for placing ship and hit battleship
 # ' ' for available space
-# 'O' for missed shot
+# '0' for missed shot
 
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
 GUESS_BOARD = [[' '] * 8 for x in range(8)]
@@ -55,6 +55,12 @@ def players_choice():
         column = input('Choose a ship column A-H: ').upper().strip()
     return int(row) - 1, LETTER_TO_NUMBERS[column]
 
-def count_hit_ships():
-    pass
+def count_hit_ships(board):
+    count = 0
+    for row in board:
+        for column in row:
+            if column == 'Y':
+                count += 1
+    return count
+    
 
