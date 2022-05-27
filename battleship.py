@@ -18,11 +18,11 @@ LETTER_TO_NUMBERS = {
     'H': 7,
     }
 
-def board():
+def print_board(board):
     pass
-def create_ships():
+def generate_random_coordinate_ships():
     pass
-def get_ship_location():
+def players_choice():
     pass
 def count_hit_ships():
     pass
