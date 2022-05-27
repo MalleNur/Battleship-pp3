@@ -5,7 +5,7 @@
 # '0' for missed shot
 
 
-fromm random import randint
+from random import randint
 
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
 GUESS_BOARD = [[' '] * 8 for x in range(8)]
