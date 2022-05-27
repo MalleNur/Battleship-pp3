@@ -74,7 +74,7 @@ def count_hit_ships(board):
         print_board(GUESS_BOARD)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == '0':
-            print(' You have already guessed that. ')
+            print('\n You have already guessed that. \n')
         
         
 
