@@ -19,7 +19,20 @@ LETTER_TO_NUMBERS = {
     }
 
 def print_board(board):
-    pass
+    
+    '''
+    Create 
+    Create board where user can guess where to hit
+    ....
+    The borad 
+    '''
+    print(' A B C D E F G H')
+    PRINT(' +++++++++++++++')
+    row-number = 1
+    for row in board:
+        print("%d|%s|" % (row-number, "|".join(row)))
+        row-number += 1
+
 def generate_random_coordinate_ships():
     pass
 def players_choice():
