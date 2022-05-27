@@ -32,14 +32,14 @@ def print_board(board):
 
 def generate_random_coordinate_ships():
     '''
-    Create random ships
+    Generate random ships for player to locate
     '''
-    global hidden_board
-    for ship in range(5)
-    ship_row, ship_column = randint(0, 7), randint(0, 7)
-    while hidden_board[ship_row][ship_column] == 'Y':
+    global HIDDEN_BOARD
+    for ship in range(5):
         ship_row, ship_column = randint(0, 7), randint(0, 7)
-    hidden_board[ship_row][ship_column] = 'Y'
+    while HIDDEN_BOARD[ship_row][ship_column] == 'Y':
+        ship_row, ship_column = randint(0, 7), randint(0, 7)
+    HIDDEN_BOARD[ship_row][ship_column] = 'Y'
 
 def players_choice():
     pass
