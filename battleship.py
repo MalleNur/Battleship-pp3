@@ -76,7 +76,7 @@ def count_hit_ships(board):
         if GUESS_BOARD[row][column] == '0':
             print('\n You have already guessed that. \n')
         elif HIDDEN_BOARD[row][column] == 'X':
-            print(' Clear shot! The battleship sank. ')
+            print('\n Clear shot! The battleship sank. \n')
             GUESS_BOARD[row][column] = 'Y'
             turns -= 1
         
