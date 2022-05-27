@@ -31,7 +31,12 @@ def print_board(board):
         row_number += 1
 
 def generate_random_coordinate_ships():
-    pass
+    for ship in range(10)
+    ship_row, ship_column = randint(0,7), randint(0,7)
+    while board [ship_row][ship_column] == 'Y':
+        ship_row, ship_column = randint(0,7), randint(0,7)
+    board[ship_row][ship_column] = 'Y'
+    
 def players_choice():
     pass
 def count_hit_ships():
