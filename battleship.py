@@ -70,6 +70,7 @@ def count_hit_ships(board):
     create_ships()
     turns = 10
     while turns > 0:
+        system('clear')
         print('Welcome to Battleship')
         print_board(GUESS_BOARD)
         row, column = get_ship_location()
