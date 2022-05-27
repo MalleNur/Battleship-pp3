@@ -75,6 +75,10 @@ def count_hit_ships(board):
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == '0':
             print('\n You have already guessed that. \n')
+        elif HIDDEN_BOARD[row][column] == 'X':
+            print(' Clear shot! The battleship sank. ')
+            GUESS_BOARD[row][column] = 'Y'
+            turns -= 1
         
         
 
