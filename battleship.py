@@ -56,6 +56,10 @@ def players_choice():
     return int(row) - 1, LETTER_TO_NUMBERS[column]
 
 def count_hit_ships(board):
+    '''
+    Count everytime the player make a hit in order to win the game.
+    If the player makes 5 hits, the game is over and the player have won.
+    '''
     count = 0
     for row in board:
         for column in row:
