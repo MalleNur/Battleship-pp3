@@ -67,7 +67,7 @@ def count_hit_ships(board):
                 count += 1
     return count
     
-    create_ships(HIDDEN_BOARD)
+    create_ships()
     turns = 10
     while turns > 0:
         print('Welcome to Battleship')
@@ -90,5 +90,6 @@ def count_hit_ships(board):
         if turns == 0:
             print('\n Sorry, you ran out of turns. Better luck next time! \n')
             break
-        
-
+        time.sleep(4)
+        if __name__=="__main__":
+            main()
