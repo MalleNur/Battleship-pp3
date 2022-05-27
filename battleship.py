@@ -86,6 +86,9 @@ def count_hit_ships(board):
         if count_hit_ships(GUESS_BOARD) == 5:
             print("\n We've won!, Nicely done. GAME OVER \n")
             break
-        
+        print('\n You have ' + str(turns) + 'turns remaining \n')
+        if turns == 0:
+            print('\n Sorry, you ran out of turns. Better luck next time! \n')
+            break
         
 
