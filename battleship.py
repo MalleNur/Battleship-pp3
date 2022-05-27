@@ -80,7 +80,7 @@ def count_hit_ships(board):
             GUESS_BOARD[row][column] = 'Y'
             turns -= 1
         else:
-            print('\n Unfortunately, you missed! \n ')
+            print('\n Unfortunately, you missed! \n')
             GUESS_BOARD[row][column] = '0'
             turns -= 1
         
