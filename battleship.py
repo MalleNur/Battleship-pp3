@@ -4,8 +4,8 @@
 # ' ' for available space
 # '0' for missed shot
 
-import time()
-from oss import system
+import time
+from os import system
 from random import randint
 
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
