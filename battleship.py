@@ -42,7 +42,16 @@ def generate_random_coordinate_ships():
     HIDDEN_BOARD[ship_row][ship_column] = 'Y'
 
 def players_choice():
-    pass
+    row = input('Please enter a ship row 1-8').upper()
+    while row not in '12345678':
+        print('Please enter a valid row')
+        row = input('Please enter a ship row 1-8')
+    column = input('Please enter a ship column A-H').upper()
+    while column not in 'ABCDEFGH':
+        PRINT('Please enter a valid column')
+        column = input('Please enter a ship column A-H').upper()
+    return int(row) - 1, LETTER_TO_NUMBERS[column]
+    
 def count_hit_ships():
     pass
 
