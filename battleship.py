@@ -83,6 +83,9 @@ def count_hit_ships(board):
             print('\n Unfortunately, you missed! \n')
             GUESS_BOARD[row][column] = '0'
             turns -= 1
+        if count_hit_ships(GUESS_BOARD) == 5:
+            print("\n We've won!, Nicely done. GAME OVER \n")
+            break
         
         
 
