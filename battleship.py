@@ -45,15 +45,14 @@ def players_choice():
     '''
     Ask player to choose row and column to hit a ship
     '''
-    row = input('Please enter a ship row 1-8 ')
+    row = input('Please enter a ship row 1-8 ').strip()
     while row not in '12345678':
         print('Please enter a valid row')
         row = input('Please enter a ship row 1-8 ')
-    column = input('Please enter a ship column A-H ').upper()
+    column = input('Please enter a ship column A-H ').upper().strip()
     while column not in 'ABCDEFGH':
         print('Please enter a valid column')
-        column = input('Please enter a ship column A-H ').upper()
-
+        column = input('Please enter a ship column A-H ').upper().strip()
     return int(row) - 1, LETTER_TO_NUMBERS[column]
 
 def count_hit_ships():
