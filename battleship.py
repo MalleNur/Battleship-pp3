@@ -24,7 +24,7 @@ def print_board(board):
     Create board where user can guess where to hit
     '''
     print(' A B C D E F G H')
-    PRINT(' +++++++++++++++')
+    print(' +++++++++++++++')
     row_number = 1
     for row in board:
         print("%d|%s|" % (row-number, "|".join(row)))
