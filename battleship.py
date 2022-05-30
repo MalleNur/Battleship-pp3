@@ -50,11 +50,11 @@ def players_choice():
     Ask player to choose row and column to hit a ship
     '''
     row = input('Choose a ship row 1-8: ').strip()
-    while row not in '12345678':
+    while row not in '12345678' or row == "":
         print('Please enter a valid row ')
         row = input('Choose a ship row 1-8: ') 
     column = input('Choose a ship column A-H: ').upper().strip()
-    while column not in 'ABCDEFGH':
+    while column not in 'ABCDEFGH' or row == "":
         print('Please enter a valid column ')
         column = input('Choose a ship column A-H: ').upper().strip() 
     return int(row) - 1, LETTER_TO_NUMBERS[column]
