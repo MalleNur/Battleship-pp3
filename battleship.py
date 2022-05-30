@@ -57,7 +57,7 @@ def players_choice():
     while column not in 'ABCDEFGH' or row == "":
         print('Please enter a valid column ')
         column = input('Choose a ship column A-H: ').upper().strip() 
-    return int(row) - 1, LETTER_TO_NUMBERS[column]
+    return (int(row) - 1, LETTER_TO_NUMBERS[column])
 
 def count_hit_ships(board):
     '''
@@ -79,7 +79,7 @@ def run_game():
         system('clear')
         print('Welcome to Battleship')
         print_board(GUESS_BOARD)
-        row, column = players_choice()
+        (row, column) = players_choice()
         if GUESS_BOARD[row][column] == '0':
             print('\n You have already guessed that. \n')
         elif HIDDEN_BOARD[row][column] == 'X':
