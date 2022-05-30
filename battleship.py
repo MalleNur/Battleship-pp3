@@ -34,7 +34,7 @@ def print_board(board):
         print("%d|%s|" % (row-number, "|".join(row)))
         row_number += 1
 
-def generate_random_coordinate_ships():
+def place_ships_randomly():
     '''
     Generate random ships for player to locate
     '''
@@ -71,13 +71,15 @@ def count_hit_ships(board):
                 count += 1
     return count
     
-    create_ships()
+    
+def run_game():
+    place_ships_randomly()
     turns = 10
     while turns > 0:
         system('clear')
         print('Welcome to Battleship')
         print_board(GUESS_BOARD)
-        row, column = get_ship_location()
+        row, column = players_choice()
         if GUESS_BOARD[row][column] == '0':
             print('\n You have already guessed that. \n')
         elif HIDDEN_BOARD[row][column] == 'X':
@@ -95,6 +97,8 @@ def count_hit_ships(board):
         if turns == 0:
             print('\n Sorry, you ran out of turns. Better luck next time! \n')
             break
-        time.sleep(4)
-        if __name__=="__main__":
-            main()
+        time.sleep(2)
+
+if __name__ == "__main__":
+    run_game()
+    print("\n Thanks for playing! \n")
