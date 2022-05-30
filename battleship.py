@@ -31,7 +31,7 @@ def print_board(board):
     print(' +++++++++++++++')
     row_number = 1
     for row in board:
-        print("%d|%s|" % (row-number, "|".join(row)))
+        print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
 def place_ships_randomly():
@@ -52,11 +52,11 @@ def players_choice():
     row = input('Choose a ship row 1-8: ').strip()
     while row not in '12345678':
         print('Please enter a valid row ')
-        row = input('Choose a ship row 1-8: ')
+        row = input('Choose a ship row 1-8: ') 
     column = input('Choose a ship column A-H: ').upper().strip()
     while column not in 'ABCDEFGH':
         print('Please enter a valid column ')
-        column = input('Choose a ship column A-H: ').upper().strip()
+        column = input('Choose a ship column A-H: ').upper().strip() 
     return int(row) - 1, LETTER_TO_NUMBERS[column]
 
 def count_hit_ships(board):
@@ -93,7 +93,7 @@ def run_game():
         if count_hit_ships(GUESS_BOARD) == 5:
             print("\n We've won!, Nicely done. GAME OVER \n")
             break
-        print('\n You have ' + str(turns) + 'turns remaining \n')
+        print('\n You have ' + str(turns) + ' turns remaining \n')
         if turns == 0:
             print('\n Sorry, you ran out of turns. Better luck next time! \n')
             break
