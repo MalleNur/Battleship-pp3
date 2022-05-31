@@ -7,6 +7,9 @@
 import time
 from os import system
 from random import randint
+from rich.console import Console
+
+console = Console()
 
 HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
 GUESS_BOARD = [[' '] * 8 for x in range(8)]
@@ -20,18 +23,18 @@ LETTER_TO_NUMBERS = {
     'F': 5,
     'G': 6,
     'H': 7,
-    }
+}
 
 def print_board(board):
     
     '''
     Create board where user can guess where to hit
     '''
-    print(' A B C D E F G H')
-    print(' +++++++++++++++')
+    console.print('  A B C D E F G H', style="bold #900C3F")
+    console.print('  +++++++++++++++', style="#ADD8E6")
     row_number = 1
     for row in board:
-        print("%d|%s|" % (row_number, "|".join(row)))
+        console.print("%d|%s|" % (row_number, "|".join(row)), style="#900C3F")
         row_number += 1
 
 def place_ships_randomly():
@@ -49,12 +52,12 @@ def players_choice():
     '''
     Ask player to choose row and column to hit a ship
     '''
-    row = input('Choose a ship row 1-8: ').strip()
+    row = input('\nChoose a ship row 1-8: ').strip()
     while row not in '12345678' or row == "":
         print('Please enter a valid row ')
         row = input('Choose a ship row 1-8: ') 
     column = input('Choose a ship column A-H: ').upper().strip()
-    while column not in 'ABCDEFGH' or row == "":
+    while column not in 'ABCDEFGH' or column == "":
         print('Please enter a valid column ')
         column = input('Choose a ship column A-H: ').upper().strip() 
     return (int(row) - 1, LETTER_TO_NUMBERS[column])
@@ -70,35 +73,68 @@ def count_hit_ships(board):
             if column == 'Y':
                 count += 1
     return count
+
+def restart_game():
+    """
+    Restarts the game
+    """
+    system('clear')
+    run_game()
+    players_choice('clear')
+    print_board('clear')
     
+    
+    
+
+    
+
+def ask_to_play_again():
+    """
+    Asks the player at the end of the game if they want to
+    play again or quit the game completely
+    """
+    answer = input('\nDo you want to restart ? Yes or No: ')
+    if answer == "Yes":
+        restart_game()
+    elif answer == "No":
+       console.print("\nThanks for playing!", style="bold white")
+       time.sleep(5)
+       system('clear')
+    else:
+        ask_to_play_again()
+
     
 def run_game():
     place_ships_randomly()
     turns = 10
     while turns > 0:
         system('clear')
-        print('Welcome to Battleship')
+        console.print('Welcome to Battleship\n', style="bold underline #ADD8E6")
+        print("Rules:\n\n- Choose coordinate from 1-8 and A-H to hit your opponents ships.\n \n- If you hit the 5 ships, you have won the game.\n \nGood Luck!\n" )
         print_board(GUESS_BOARD)
         (row, column) = players_choice()
         if GUESS_BOARD[row][column] == '0':
-            print('\n You have already guessed that. \n')
+            console.print('\nYou have already guessed that. ', style="bold white")
         elif HIDDEN_BOARD[row][column] == 'X':
-            print('\n Clear shot! The battleship sank. \n')
+            console.print('\nClear shot! The battleship sank. ', style="bold white")
             GUESS_BOARD[row][column] = 'Y'
             turns -= 1
         else:
-            print('\n Unfortunately, you missed! \n')
+            console.print('\nUnfortunately, you missed! ', style="bold white")
             GUESS_BOARD[row][column] = '0'
             turns -= 1
         if count_hit_ships(GUESS_BOARD) == 5:
-            print("\n We've won!, Nicely done. GAME OVER \n")
+            console.print("\nWe've won!, Nicely done. GAME OVER ", style="bold white")
             break
-        print('\n You have ' + str(turns) + ' turns remaining \n')
+        console.print('\nYou have ' + str(turns) + ' turns remaining ', style="bold white")
         if turns == 0:
-            print('\n Sorry, you ran out of turns. Better luck next time! \n')
+            console.print('\nSorry, you ran out of turns. Better luck next time! \n', style="bold white")
+            ask_to_play_again()
             break
         time.sleep(2)
+        
 
 if __name__ == "__main__":
     run_game()
-    print("\n Thanks for playing! \n")
+    
+
