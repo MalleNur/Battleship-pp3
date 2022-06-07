@@ -80,6 +80,8 @@ def count_hit_ships(board):
     return count
 
 def reset_game_board():
+    global HIDDEN_BOARD
+    global GUESS_BOARD
     HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
     GUESS_BOARD = [[' '] * 8 for x in range(8)]
 
@@ -105,7 +107,7 @@ def ask_to_play_again():
     elif answer == "No".lower():
        console.print("\nThanks for playing!", style="bold white")
        time.sleep(5)
-       system('clear')
+       quit()
     else:
         ask_to_play_again()
 
@@ -115,8 +117,8 @@ def run_game():
     turns = 10
     while turns > 0:
         system('clear')
-        console.print('Welcome to Battleship\n', style="bold underline #ADD8E6")
-        console.print("Rules:\n\n- Choose coordinate from 1-8 and A-H to hit your opponents ships.\n \n- If you hit the 5 ships, you have won the game.\n \nGood Luck!\n", style="bold green" )
+        console.print('WELCOME TO BATTLESHIP!\n', style="bold underline #73A5C6")
+        console.print("Rules:\n\n- Choose coordinates from 1-8 (row) and A-H (column) to hit your opponents ships.\n \n- You have 10 turns total to complete the game.\n \n- If you've hit the 5 hidden ships, you have won the game.\n \nGood Luck!\n", style="bold green" )
         print_board(GUESS_BOARD)
         (row, column) = players_choice()
         if GUESS_BOARD[row][column] == '0':
@@ -137,7 +139,8 @@ def run_game():
             console.print('\nSorry, you ran out of turns. Better luck next time! \n', style="bold white")
             ask_to_play_again()
             break
-        time.sleep(0.5)
+        time.sleep(1)
+        
         
 
 if __name__ == "__main__":
