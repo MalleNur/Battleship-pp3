@@ -124,7 +124,9 @@ def run_game():
     turns = 10
     while turns > 0:
         system('clear')
-        console.print('WELCOME TO BATTLESHIP!\n', style="bold underline #73A5C6")
+        console.print('WELCOME TO BATTLESHIP!\n',_\
+             style="bold underline_\
+                  #73A5C6")
         console.print("Rules:\n\n- Choose coordinates from 1-8 (row) and A-H (column) to hit your opponents ships.\n- You have 10 turns total to complete the game.\n- If you've hit the 5 hidden ships, you have won the game.\n \nGood Luck!\n", style="bold green")
         print_board(GUESS_BOARD)
         (row, column) = players_choice()
