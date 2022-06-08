@@ -25,8 +25,8 @@ LETTER_TO_NUMBERS = {
     'H': 7,
 }
 
+
 def print_board(board):
-    
     '''
     Create board where user can guess where to hit
     '''
@@ -37,8 +37,10 @@ def print_board(board):
         console.print("%d|%s|" % (row_number, "|".join(row)), style="#900C3F")
         row_number += 1
 
+
 def get_random_coordinates():
     return randint(0, 7), randint(0, 7)
+
 
 def place_ships_randomly():
     '''
@@ -51,7 +53,6 @@ def place_ships_randomly():
             ship_row, ship_column = get_random_coordinates()
         HIDDEN_BOARD[ship_row][ship_column] = 'Y'
 
-    
 
 def players_choice():
     '''
@@ -60,15 +61,16 @@ def players_choice():
     row = input('\nChoose a ship row 1-8: ').strip()
     while row not in '12345678' or row == "":
         print('Please enter a valid row ')
-        row = input('Choose a ship row 1-8: ') 
+        row = input('Choose a ship row 1-8: ')
     column = input('Choose a ship column A-H: ').upper().strip()
     while column not in 'ABCDEFGH' or column == "":
         print('Please enter a valid column ')
-        column = input('Choose a ship column A-H: ').upper().strip() 
+        column = input('Choose a ship column A-H: ').upper().strip()
 
         data_str = input("Enter your data here:\n")
 
     return (int(row) - 1, LETTER_TO_NUMBERS[column])
+
 
 def count_hit_ships(board):
     '''
@@ -82,11 +84,13 @@ def count_hit_ships(board):
                 count += 1
     return count
 
+
 def reset_game_board():
     global HIDDEN_BOARD
     global GUESS_BOARD
     HIDDEN_BOARD = [[' '] * 8 for x in range(8)]
     GUESS_BOARD = [[' '] * 8 for x in range(8)]
+
 
 def restart_game():
     """
@@ -97,7 +101,7 @@ def restart_game():
     run_game()
     players_choice()
     print_board()
-    
+
 
 def ask_to_play_again():
     """
@@ -108,20 +112,20 @@ def ask_to_play_again():
     if answer == "Yes".lower():
         restart_game()
     elif answer == "No".lower():
-       console.print("\nThanks for playing!", style="bold white")
-       time.sleep(5)
-       quit()
+        console.print("\nThanks for playing!", style="bold white")
+        time.sleep(5)
+        quit()
     else:
         ask_to_play_again()
 
-    
+
 def run_game():
     place_ships_randomly()
     turns = 10
     while turns > 0:
         system('clear')
         console.print('WELCOME TO BATTLESHIP!\n', style="bold underline #73A5C6")
-        console.print("Rules:\n\n- Choose coordinates from 1-8 (row) and A-H (column) to hit your opponents ships.\n- You have 10 turns total to complete the game.\n- If you've hit the 5 hidden ships, you have won the game.\n \nGood Luck!\n", style="bold green" )
+        console.print("Rules:\n\n- Choose coordinates from 1-8 (row) and A-H (column) to hit your opponents ships.\n- You have 10 turns total to complete the game.\n- If you've hit the 5 hidden ships, you have won the game.\n \nGood Luck!\n", style="bold green")
         print_board(GUESS_BOARD)
         (row, column) = players_choice()
         if GUESS_BOARD[row][column] == '0':
@@ -143,10 +147,7 @@ def run_game():
             ask_to_play_again()
             break
         time.sleep(1)
-        
-        
 
+ 
 if __name__ == "__main__":
     run_game()
-    
-
