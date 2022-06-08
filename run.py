@@ -125,23 +125,20 @@ def run_game():
     while turns > 0:
         system('clear')
         console.print('WELCOME TO BATTLESHIP!\n',
-             style="bold underline \
-               #73A5C6")
+                      style="bold underline \
+                      #73A5C6")
         console.print("Rules:\n \
-        \n- Choose coordinates from 1-8 (row) \
-        and A-H (column) to hit your opponents ships.\n \
-        - You have 10 turns total to complete the game.\n \
-        - If you've hit the 5 hidden ships, you have won the game.\n \
-        \nGood Luck!\n",
-        style="bold green")
+                      \n- Choose coordinates from 1-8 (row)and A-H (column)to hit your opponents ships.\n- You have 10 turns total to complete the game.\n- If you've hit the 5 hidden ships, you have won the game.\n\
+                      \nGood Luck!\n",
+                      style="bold green")
         print_board(GUESS_BOARD)
         (row, column) = players_choice()
         if GUESS_BOARD[row][column] == '0':
             console.print('\nYou have already guessed that. ',
-            style="bold white")
+                          style="bold white")
         elif HIDDEN_BOARD[row][column] == 'Y':
             console.print('\nClear shot! The battleship sank. ',
-            style="bold white")
+                          style="bold white")
             GUESS_BOARD[row][column] = 'X'
             turns -= 1
         else:
@@ -150,14 +147,14 @@ def run_game():
             turns -= 1
         if count_hit_ships(GUESS_BOARD) == 5:
             console.print("\nWe've won!, Nicely done. GAME OVER ",
-            style="bold white")
+                          style="bold white")
             break
         console.print('\nYou have ' + str(turns) + ' turns remaining ',
-        style="bold white")
+                      style="bold white")
         if turns == 0:
             console.print('\nSorry, you ran out of turns.\
-            Better luck next time! \n',
-            style="bold white")
+                          Better luck next time! \n',
+                          style="bold white")
             ask_to_play_again()
             break
         time.sleep(1)
