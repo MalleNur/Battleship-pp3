@@ -65,6 +65,9 @@ def players_choice():
     while column not in 'ABCDEFGH' or column == "":
         print('Please enter a valid column ')
         column = input('Choose a ship column A-H: ').upper().strip() 
+
+        data_str = input("Enter your data here:\n")
+
     return (int(row) - 1, LETTER_TO_NUMBERS[column])
 
 def count_hit_ships(board):
