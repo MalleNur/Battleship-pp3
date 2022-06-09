@@ -15,8 +15,8 @@ https://github.com/MalleNur/Battleship-pp3
 ![](images/Feature2.png)
 ![](images/Feature3.png)
 ![](images/Feature4.png)
-![](images/Feature5.png)
-![](images/Feature6.png)
+![](images/Feature55.png)
+![](images/Feature66.png)
 
 
 
