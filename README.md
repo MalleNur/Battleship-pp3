@@ -11,11 +11,26 @@ https://github.com/MalleNur/Battleship-pp3
 ![](images/Screenshot1.png)
 # Features
 
+- The first picture show how the game looks like when the player runs the app on Heroku.
+- There is a 'Welcome to Battleship' text at the top with rules under that explaines how the game works.
+
 ![](images/Feature1.png)
+
+- The next images show when the player have choosen a column and a row  but missed a shot. 
+  The text "Unfortunately, you missed!" comes up. 
+
 ![](images/Feature2.png)
+
+- This image shows when the player hits a ship ad gets the message "Clear shot, the battleship sank"
 ![](images/Feature3.png)
+
+- Image 4 shows when the player already have guessed the column and row before.
 ![](images/Feature4.png)
+
+- Image 5 shows when the player have used up all their turns and has not won the game. The text " Sorry, you ran out of turns. Better luck next time" will come up and notifies the player that the game is finished.
 ![](images/Feature55.png)
+
+- The last image shows us when the player is finished with the game and chooses to not restart and quit.
 ![](images/Feature66.png)
 
 
@@ -23,9 +38,8 @@ https://github.com/MalleNur/Battleship-pp3
 # How The Game Works + Battleship Flowchart
 
 - This game shows a guessing board with a column from A-H and a row from 1-8.
-- There will be information about rules and how the game works. 
-- The player will be asked to guess a row and a column 10 times. If the player hits the 5 hidden ships the player wins the game. 
-- Otherwise the player gets a message that they didnt hit right amount of hidden ships and will be asked if they want to start over and play the game again.
+- The player has to enter a column and a row 10 different turns until the 5 hidden ships gets sunk. 
+- If the player have hit all five ships then the player have won the game and gets asked to either continue or quit the game.
 
 Here is a chart overview of the Battleship Game, called flowchart. 
 Its a description of how the game function from start to finish. 
@@ -34,7 +48,7 @@ Its a description of how the game function from start to finish.
 # Testing/Debugging
 
 - I had alot of errors with whitespace and lines being too long when i wrote my code. By putting my code through PEP8 validator i was able to find all the errors.
-- I had to fix couple of indentation that is crucial to fix/debugg. 
+- I had to fix a couple of indentation that was crucial for this project and pass the PEP8 validation system.
 
 
 
