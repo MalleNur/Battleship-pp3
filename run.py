@@ -152,8 +152,7 @@ def run_game():
         console.print('\nYou have ' + str(turns) + ' turns remaining ',
                       style="bold white")
         if turns == 0:
-            console.print('\nSorry, you ran out of turns.\
-                          Better luck next time! \n',
+            console.print('\nSorry, you ran out of turns. Better luck next time! \n',
                           style="bold white")
             ask_to_play_again()
             break
