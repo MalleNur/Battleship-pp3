@@ -1,4 +1,3 @@
-
 # Explanation
 # Y for placing ship and hit battleship
 # ' ' for available space
@@ -142,14 +141,15 @@ def run_game():
             GUESS_BOARD[row][column] = 'X'
             turns -= 1
         else:
-            console.print('\nUnfortunately, you missed! ', style="bold white")
+            console.print('\nUnfortunately, you missed! ',
+                          style="bold white")
             GUESS_BOARD[row][column] = '0'
             turns -= 1
         if count_hit_ships(GUESS_BOARD) == 5:
             console.print("\nWe've won!, Nicely done. GAME OVER ",
                           style="bold white")
             break
-        console.print('\nYou have ' + str(turns) + ' turns remaining ',
+        console.print('\nYou have ' + str(turns) + ' turns remaining. ',
                       style="bold white")
         if turns == 0:
             console.print('\nSorry, you ran out of turns. Better luck next time! \n',
