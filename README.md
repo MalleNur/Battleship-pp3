@@ -2,19 +2,22 @@
 
 Battlehship is a strategy type guessing game where the player will be playing against the computer and will be able to pick a Column and a Row.
 
-
-
 Here is a demo on the Battlehship game: 
 https://battleshipproject3.herokuapp.com/
 
 Link to my repository:
 https://github.com/MalleNur/Battleship-pp3
+
+![](images/Screenshot1.png)
 # Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
+![](images/Feature1.png)
+![](images/Feature2.png)
+![](images/Feature3.png)
+![](images/Feature4.png)
+![](images/Feature5.png)
+![](images/Feature6.png)
+
 
 
 # How The Game Works + Battleship Flowchart
@@ -26,6 +29,8 @@ https://github.com/MalleNur/Battleship-pp3
 
 Here is a chart overview of the Battleship Game, called flowchart. 
 Its a description of how the game function from start to finish. 
+
+![](images/Flowchart.png)
 # Testing/Debugging
 
 - I had alot of errors with whitespace and lines being too long when i wrote my code. By putting my code through PEP8 validator i was able to find all the errors.
@@ -38,6 +43,8 @@ Its a description of how the game function from start to finish.
 PEP8
 
 - No errors were returned from PEP8online.com
+
+![](images/.png)
 # Deployment
 
 ## Local Deployment
