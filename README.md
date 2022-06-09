@@ -44,7 +44,7 @@ PEP8
 
 - No errors were returned from PEP8online.com
 
-![](images/.png)
+![](images/PEP8.png)
 # Deployment
 
 ## Local Deployment
