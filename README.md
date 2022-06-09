@@ -22,15 +22,19 @@ https://github.com/MalleNur/Battleship-pp3
 ![](images/Feature2.png)
 
 - This image shows when the player hits a ship ad gets the message "Clear shot, the battleship sank"
+
 ![](images/Feature3.png)
 
 - Image 4 shows when the player already have guessed the column and row before.
+
 ![](images/Feature4.png)
 
 - Image 5 shows when the player have used up all their turns and has not won the game. The text " Sorry, you ran out of turns. Better luck next time" will come up and notifies the player that the game is finished.
+
 ![](images/Feature55.png)
 
 - The last image shows us when the player is finished with the game and chooses to not restart and quit.
+
 ![](images/Feature66.png)
 
 
